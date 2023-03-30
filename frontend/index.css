@@ -2,27 +2,59 @@ body {
   margin: 0;
   padding:0;
   font-family: sans-serif;
+  background-color: #120d14 !important;
+}
+.content{
+  background-color: #120d14 !important;
 }
 
 .todo-title{
   cursor:pointer;
+  font-weight: 500 !important;
+}
+.todo-title:hover{
+  font-weight: 660 !important;
+}
+.custom_bcg{
+  background-color: #cbcbcb !important;
 }
 .completed-todo { 
   text-decoration: line-through;
 }
 .tab-list > span {
-  padding: 5px 8px;
-  border : 1px solid rgb(13, 159, 204);
+  padding:  10px!important;
   border-radius:10px;
   margin-right:20px;
   cursor: pointer;
+  font-weight: 500;
 }
 .tab-list>span.active {
-  background-color: rgb(13, 159, 204);
-  color:#fff;
+  background-color: #b7c2d4;
+  color: #120d14;
+}
+.sw-btn{
+  background-color: #2e2e39;
+  color: azure;
 }
 
 .sw-btn:hover {
-  background-color: rgb(165, 234, 253);
+  background-color: #686a77;
   transition: .5s;
+}
+.add-btn{
+  width: 234px;
+  background-color: #c3b1bd !important;
+  font-weight: 600!important;
+}
+.add-btn:hover{
+  font-weight: 700 !important;
+  background-color: #dcc9d6 !important;
+}
+.del-img{
+  width: 20px;
+  cursor: pointer;
+}
+.del-img:hover{
+  width: 21px;
+  cursor: pointer;
 }

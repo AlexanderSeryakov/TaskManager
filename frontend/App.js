@@ -68,32 +68,23 @@ class App extends Component {
     return newItems.map(item => (
       <li
         key={item.id}
-        className="list-group-item d-flex justify-content-between align-items-center"
+        className="list-group-item d-flex justify-content-between align-items-center custom_bcg"
       >
         <span // Раздел с задачей. Отображается по умолчанию только title. 
               //По клику на title вызывается метод для редактирования в котором (отрабатывает CusnomModal) с последующим PUT-запросом
           onClick={() => this.editItem(item)}
-          className={`todo-title mr-2 ${this.state.viewCompleted ? "completed-todo" : ""
+          className={`todo-title m-2 ${this.state.viewCompleted ? "completed-todo" : ""
             }`}
         >
           {item.title}
         </span>
         <span>
-          <button // Кнопка Edit. По клику вызывается метод для редактирования в котором 
-                  //(отрабатывает CusnomModal) с последующим PUT-запросом
-            onClick={() => this.editItem(item)}
-            className="btn btn-info m-2"
-          >
-            Edit
-          </button>
-          <button
+          <a
                 // Кнопка Delete для удаления задачи. Вызывает функцию handleDelete, 
                 // которая отправляет DELETE -запрос к API.
             onClick={() => this.handleDelete(item)}
-            className="btn btn-danger m-2"
-          >
-            Delete
-          </button>
+          ><img src="/images/delete.png" className="del-img"/>
+          </a>
         </span>
       </li>
     ));
@@ -146,18 +137,18 @@ class App extends Component {
   // -I- Start 
   render() {
     return (
-      <main className="content p-3 mb-2 bg-info">
+      <main className="content p-3 mb-2 ">
         <h1 className="text-white text-uppercase text-center my-4">Task Manager</h1>
         <div className="row">
           <div className="col-md-6 col-sm-10 mx-auto p-0">
-            <div className="card p-3">
+            <div className="card p-3 custom_bcg">
               <div className="">
-                <button onClick={this.createItem} className="btn btn-warning">
+                <button onClick={this.createItem} className="btn add-btn">
                   Add task
                     </button>
               </div>
               {this.renderTabList()}
-              <ul className="list-group list-group-flush">
+              <ul className="list-group list-group-flush custom_bcg">
                 {this.renderItems()}
               </ul>
             </div>
@@ -170,9 +161,9 @@ class App extends Component {
             onSave={this.handleSubmit}
           />
         ) : null}
-        <footer className="my-3 mb-2 text-white bg-info text-center">
-          <p>This footer :)</p>
-          <p>This CopyRight &copy;</p>
+        <footer className="my-3 mb-2 text-white text-center">
+          <p>Alexander Seryakov </p>
+          <p>2023 CopyRight &copy;</p>
         </footer>
       </main>
     );
